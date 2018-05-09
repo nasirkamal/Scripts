@@ -1,0 +1,49 @@
+sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
+sudo apt-get install --no-install-recommends libboost-all-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get install libopenblas-dev
+sudo apt-get install doxygen
+sudo apt-get install python-pip
+sudo apt-get install git
+
+Run script to install OpenCV
+wget https://raw.githubusercontent.com/milq/milq/master/scripts/bash/install-opencv.sh
+chmod +x install-opencv.sh
+./install-opencv.sh
+
+Install Caffe
+git clone https://github.com/MichalBusta/caffe.git
+cd caffe
+git checkout darknet
+cd python
+for req in $(cat requirements.txt); do pip install $req; done
+
+mkdir Release 
+cd Release 
+make 
+make install (optionally)
+
+git clone https://github.com/MichalBusta/DeepTextSpotter.git
+cd "SOURCE dir" 
+mkdir build
+cd build
+cmake ..
+make 
+
+Download Models from:
+https://drive.google.com/open?id=0B8SUcdkLTcuTZjRHeUpjdzhmbFE
+https://drive.google.com/open?id=0B8SUcdkLTcuTMmI0TS1uNDJaZGs
+
+Place models in "SOURCE dir/models"
+
+Make following changes in demo.py file.
+
+sys.path.append('/path/to/caffe/python')
+Line 201: Comment out "cap = cv2.VideoCapture(0)"
+and replace it with
+cap = cv2.VideoCapture('path/to/test/video.mp4')
+At the end of file change "caffe.set_mode_gpu()" to "caffe.set_mode_cpu()" at the end of file.
+
+Finally run
+python demo.py
