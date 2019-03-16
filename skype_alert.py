@@ -10,8 +10,8 @@ from subprocess import Popen, PIPE
 # Skype user credentials to login, this user should be able to login to web.skype.com without any interruption(Captcha or Phone numver varification etc.)
 # I have not tested this on skype for business, it works fine on normal skype.
 
-credentials = {'username':'xflow-testupdate@outlook.com', \
-               'password':'Xflow@123'}
+credentials = {'username':'*********@outlook.com', \
+               'password':'**********'}
 
 # Following file is used to track group conversations.
 group_info_file = '.groupinfo.json'
