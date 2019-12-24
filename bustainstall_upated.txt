@@ -9,6 +9,7 @@ sudo apt-get install git
 
 Run script to install OpenCV
 wget https://raw.githubusercontent.com/milq/milq/master/scripts/bash/install-opencv.sh
+# Change open-cv version to 3.4.9
 chmod +x install-opencv.sh
 ./install-opencv.sh
 
