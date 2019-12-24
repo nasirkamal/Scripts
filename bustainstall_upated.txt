@@ -21,12 +21,13 @@ cd python
 for req in $(cat requirements.txt); do pip install $req; done
 
 mkdir Release 
-cd Release 
+cd Release
+cmake -D CMAKE_BUILD_TYPE=Release -D BLAS=Open -D BUILD_SHARED_LIBS=Off ..
 make 
-make install (optionally)
+make install
 
 git clone https://github.com/MichalBusta/DeepTextSpotter.git
-cd "SOURCE dir" 
+cd DeepTextSpotter 
 mkdir build
 cd build
 cmake ..
@@ -36,7 +37,7 @@ Download Models from:
 https://drive.google.com/open?id=0B8SUcdkLTcuTZjRHeUpjdzhmbFE
 https://drive.google.com/open?id=0B8SUcdkLTcuTMmI0TS1uNDJaZGs
 
-Place models in "SOURCE dir/models"
+Place models in "DeepTextSpotter/models"
 
 Make following changes in demo.py file.
 
