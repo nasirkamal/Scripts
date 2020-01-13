@@ -26,6 +26,7 @@ cmake -D CMAKE_BUILD_TYPE=Release -D BLAS=Open -D BUILD_SHARED_LIBS=Off ..
 make 
 make install
 
+cd ~
 git clone https://github.com/MichalBusta/DeepTextSpotter.git
 cd DeepTextSpotter 
 mkdir build
