@@ -19,7 +19,7 @@ cd caffe
 git checkout darknet
 cd python
 for req in $(cat requirements.txt); do pip install $req; done
-
+cd ..
 mkdir Release 
 cd Release
 cmake -D CMAKE_BUILD_TYPE=Release -D BLAS=Open -D BUILD_SHARED_LIBS=Off ..
